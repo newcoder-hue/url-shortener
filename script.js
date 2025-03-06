@@ -4,6 +4,7 @@ import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import ticketRoute from "./routes/ticket.route.js"
+import ticketnumber from "./routes/ticketnumber.route.js"
 
 
 
@@ -21,6 +22,10 @@ const PORT = process.env.PORT || 3000
 
 
 app.use('/api/ticket', ticketRoute)
+app.use('/api', ticketnumber)
+
+
+
 
 
 mongoose.connect((process.env.MONGODB_URI), {
